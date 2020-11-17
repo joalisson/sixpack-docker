@@ -4,10 +4,8 @@ sixpackapi:
   environment:
     - SIXPACK_CONFIG_ENABLED=true
     - SIXPACK_CONFIG_REDIS_PORT=6379
-    - SIXPACK_CONFIG_REDIS_HOST=redis
+    - SIXPACK_CONFIG_REDIS_HOST=http://hub-redis
     - SIXPACK_CONFIG_REDIS_PREFIX=sixpack
-  links:
-   - redis
   ports:
    - "5000:8000"
 sixpackweb:
@@ -16,12 +14,8 @@ sixpackweb:
   environment:
     - SIXPACK_CONFIG_ENABLED=true
     - SIXPACK_CONFIG_REDIS_PORT=6379
-    - SIXPACK_CONFIG_REDIS_HOST=redis
+    - SIXPACK_CONFIG_REDIS_HOST=http://hub-redis
     - SIXPACK_CONFIG_REDIS_PREFIX=sixpack
-  links:
-   - redis
   ports:
    - "5001:8000"
-redis:
-  image: redis:3.0.0
 
